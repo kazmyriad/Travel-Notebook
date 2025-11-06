@@ -1,33 +1,53 @@
 /* For index.html (Home Page) */
+*{
+    font-family:'Courier New', Courier, monospace;
+    background-color: #E7ECEF;
+}
 
 .wrapper{
-    background-color: red;
     display: grid; 
     grid-template-columns: 0fr 1fr 1fr; 
-    grid-template-rows: 1fr 1fr 0fr; 
+    grid-template-rows: 0fr 1fr 0fr; 
     gap: 0px 0px; 
     grid-template-areas: 
         ". title new-log-wrapper"
         ". log-wrapper new-log-wrapper"
         ". . ."; 
+    border:#274C77;
+    border-width: 5px;
+    border-style: solid;
+    justify-content: center;
 }
 
 .log-wrapper{
     grid-area: log-wrapper;
+    border-top:#274C77;
+    border-top-style: solid;
+    border-width: .2em;
+    padding: 5px;
 }
 
 .new-log-wrapper{
-    background-color: green;
     grid-area: new-log-wrapper;
     text-align: center;
     justify-items: center;
+    border-left:#274C77;
+    border-left-style: solid;
+    border-width: .4em;
 }
 
 .title{
-    background-color: blue;
     grid-area: title;
+    padding-left: 1em;
 }
 
-button{
-    margin: auto;
+.create-new{
+    position: relative;
+    top: 40%;
+    background-color: #274C77;
+    color: #E7ECEF;
+    font-size: 3em;
+    width: 1.2em;
+    text-align: center;
+    border-radius: 1em;
 }

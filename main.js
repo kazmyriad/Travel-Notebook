@@ -1,1 +1,2 @@
-// We can worry about the JS towards the end
+// creating a new log
+

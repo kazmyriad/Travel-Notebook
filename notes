@@ -1,6 +1,7 @@
 - has to work for different devices (Browser and mobile)
-- Implementation does NOT have to be compelete for final presentation (we'll have a week after the final presentation to finish it up)
+- Implementation does NOT have to be complete for final presentation (we'll have a week after the final presentation to finish it up)
 - We also need to create icons (I can draw them if you guys want!)
+- We can add @media queries when we're done with all the CSS for sizing for different screen sizes
 
 - I (Alyssa) will do all the merging so make sure you **fork** this and **commit changes**
 
