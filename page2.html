@@ -13,40 +13,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
     <script type="module" src="./main.js"></script>
-    <title>Travel Log</title>
+    <title>Travel Log Entry</title>
   </head>
 
   <body>
+    <button id="editPageBtn" class="edit-page-btn">Edit Page</button>
     <div class="Log">
-      <div class="title-wrapper">
-        <h1>Trip Title</h1>
-        <h2>Location Name</h2>
-        <p>Dates of Trip</p>
-      </div>
-
-      <div>
-        <div class="main-image">
-
+      <div class="top-section">
+        <div class="title-wrapper">
+          <input
+            type="text"
+            id="titleInput"
+            class="trip-title"
+            placeholder="Trip Title"
+            disabled
+          />
+          <input
+            type="text"
+            id="locationInput"
+            class="trip-location"
+            placeholder="Location Name"
+            disabled
+          />
+          <input
+            type="text"
+            id="datesInput"
+            class="trip-dates"
+            placeholder="Dates of Trip"
+            disabled
+          />
         </div>
+
+        <div class="main-image">
+          <img src="main-photo.jpg" alt="Main trip photo" />
+        </div>
+      </div>
 
       <div class="log-wrapper">
         <h2>Notes</h2>
-        <div class="notes-list">
-        <ul>  
-          <li>note</li>
-          <li>note</li>
-          <li>note</li>
-        </ul>
-
-        <div class="photo-gallery">
-          <h2>Photo Gallery</h2>
-          <div class="photos">
-            <div><img src="photo1.jpg" alt="Pic 1"></div>
-            <div><img src="photo2.jpg" alt="Pic 2"></div>
-            <div><img src="photo3.jpg" alt="Pic 3"></div>
-          </div>
-
+        <textarea
+          id="notesInput"
+          class="notes-textarea"
+          placeholder="Write your notes..."
+          disabled
+        ></textarea>
       </div>
+
+      <div class="photo-gallery">
+        <h2>Photo Gallery</h2>
+
+        <input
+          type="file"
+          id="photoInput"
+          accept="image/*"
+          multiple
+          style="display: none"
+        />
+
+        <div class="photos-box">
+          <div class="photos" id="photoDisplay">
+            <div><img src="photo1.jpg" alt="photo 1" /></div>
+            <div><img src="photo2.jpg" alt="photo 2" /></div>
+            <div><img src="photo3.jpg" alt="photo 3" /></div>
+            <div><img src="photo4.jpg" alt="photo 4" /></div>
+            <div><img src="photo5.jpg" alt="photo 5" /></div>
+            <div><img src="photo6.jpg" alt="photo 6" /></div>
+            <div><img src="photo7.jpg" alt="photo 7" /></div>
+            <div><img src="photo8.jpg" alt="photo 8" /></div>
+          </div>
+        </div>
+
+        <button id="addMorePhotosBtn" class="add-more-photos-btn">
+          + Add More Photos
+        </button>
+      </div>
+
+      <div class="itinerary">
+        <h2>Itinerary</h2>
+        <textarea
+          id="itineraryInput"
+          class="itinerary-textarea"
+          placeholder="Type your itinerary..."
+          disabled
+        ></textarea>
+        <br />
+        <button id="shareItineraryBtn" class="share-itinerary-btn">
+          Share Itinerary
+        </button>
+      </div>
+
+      <div class="map-integration">
+        <h2>Map</h2>
+        <div id="map" class="placeholder-box">Map will appear here</div>
+
+        <div class="location-section">
+          <button id="getLocationBtn">Use My Location</button>
+          <p id="locationStatus"></p>
+          <div id="locationDisplay"></div>
+        </div>
+      </div>
+
+      <button id="saveEntryBtn" class="save-entry-btn" style="display: none">
+        Save Entry
+      </button>
     </div>
   </body>
 </html>
