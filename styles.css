@@ -4,7 +4,6 @@
     background-color: #E7ECEF;
 }
 
-<<<<<<< HEAD
 .wrapper {
   background-color: red;
   display: grid;
@@ -22,14 +21,14 @@
 }
 
 .new-log-wrapper {
-  background-color: green;
+
   grid-area: new-log-wrapper;
   text-align: center;
   justify-items: center;
 }
 
 .title {
-  background-color: blue;
+
   grid-area: title;
 }
 
@@ -168,7 +167,6 @@ button {
   margin-top: 20px;
   color: #000;
 }
-=======
 .wrapper{
     display: grid; 
     grid-template-columns: 0fr 1fr 1fr; 
@@ -219,4 +217,3 @@ button {
     text-align: center;
     border-radius: 1em;
 }
->>>>>>> e7df62ec564b9ada25d6f302701cb72c518e4570
