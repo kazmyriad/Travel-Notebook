@@ -18,6 +18,7 @@
 
 .log-wrapper {
   grid-area: log-wrapper;
+  overflow: scroll;
 }
 
 .new-log-wrapper {
@@ -34,6 +35,12 @@
 
 button {
   margin: auto;
+}
+
+.log-display{
+  background-color: red;
+  width: 100%;
+  height: 100px;
 }
 
 /* page 2: (New Log Page) */

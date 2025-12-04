@@ -3,7 +3,8 @@
     "short_name": "Final Project",
     "description": "A connection-independent travel logger for every journey you go on.",
     "start_url": "/",
-    "display": "minimal-ui",
+    "theme_color":"#96BEE6",
+    "display": "standalone",
     "icons": [
         {
             "src": "icons/shield-96.png",
