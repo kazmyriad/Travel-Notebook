@@ -10,30 +10,31 @@ const addingData = () =>
     newListInput.push(...Array.from(inputs).map(input => input.value));
     console.log(newListInput); // taking input for current page and making array
 
-    compiledData.push(newListInput); // pushes new array into list of data
+    // compiledData.push(newListInput); // pushes new array into list of data
 
-    console.log(compiledData);
-    savingData(compiledData, title);
+    // console.log(compiledData);
+    savingData(newListInput, title.value);
 
-    // clear the textbox
-    inputs.value = "";
     console.log("ADDED");
 }
 
 //actually writing data to memory
-const savingData = (data, title) => {
+export const savingData = (data, title) => {
     var data = JSON.stringify(data); //converts data to a String
     localStorage.setItem(title, data); //saves data in localStorage
 };
 
-const retrievingData = (data) => {
-    var retrievedData = localStorage.getItem(data); //gets data from localStorage
-    var dataList = JSON.parse(retrievedData); //converts back to JS value
+export const retrievingData = () => {
+    var compiledArray = [];
 
-    console.log(dataList.items[0].Desc);
+    for ( var i = 0, len = localStorage.length; i < len; ++i ) {
+        const item = localStorage.getItem(localStorage.key(i));
+        const newItem = JSON.parse(item);
+        compiledArray+=newItem;
+        } // returning a string
+
+    console.log(compiledArray);
+    return compiledArray;
 };
 
-const createLog = (data) =>{
-    
-}
 document.querySelector(".save-entry").addEventListener("click", addingData);

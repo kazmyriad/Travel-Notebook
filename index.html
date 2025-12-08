@@ -8,7 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="styles.css" />
         <script type="module" src="./main.js"></script>
-        <script type="module" src="./storage.js"></script>
+        <script type="module" src="./log-display.js"></script>
         <title>Travel Log</title>
     </head>
 
@@ -19,21 +19,18 @@
                 <h1>Logs</h1>
             </div>
             <div class="log-wrapper">
-                <div class="log-display">
-                    <p class="log-title">Paris</p>
-                    <p class="log-date">Jan 2009</p>
-                    <img class="log-display-img" src="main-photo.jpg" alt="Main trip photo" />
-                    <button class="open-log">></button>
-                </div>
+                <log-display title="Bali" date="Nov 2009"></log-display>
 
                 <!-- These logs are representative of the logs that will be added once we do the JS
                  and are NOT functional; the logs will have to be populated by the JS -->
             </div>
             <div class="new-log-wrapper">
-                <button class="create-new">+</button> 
+                <button class="create-new" onclick="window.location='./page2.html';">+</button> 
                 <!-- Clicking this button should create a new log -->
             </div>
          </div>
     </body>
+    
+    <script type="module" src="./storage.js"></script>
 
 </html>

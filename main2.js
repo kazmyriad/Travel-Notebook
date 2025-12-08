@@ -1,10 +1,10 @@
 
-// const openIndex = () =>
-// {
-//     console.log("BUTTON");
-//     window.location.href= "./index.html";
+const openIndex = () =>
+{
+    console.log("BUTTON");
+    window.location.href= "./index.html";
 
-// }
+}
 document.querySelector(".save-entry-btn").addEventListener("click", openIndex);
 
 
