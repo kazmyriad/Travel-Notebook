@@ -8,8 +8,8 @@ export const addingData = () =>
     const newItem = {
         title: "",
         location:"",
-        banner:"",
         dates:"",
+        banner:"",
         notes:"",
         itinerary:"",
         photo:[],
@@ -18,7 +18,6 @@ export const addingData = () =>
 
     document.querySelectorAll('input').forEach((item) => {
         newItem[item.id] = item.value;
-        console.log("hi");
     })
     savingData(newItem);    
 }

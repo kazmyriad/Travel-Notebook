@@ -21,9 +21,7 @@
         ". title new-log-wrapper"
         ". log-wrapper new-log-wrapper"
         ". . ."; 
-    border:#274C77;
-    border-width: 5px;
-    border-style: solid;
+    border:5px solid #274C77;
     width: 80%;
     height: 30em;
     margin: auto;
@@ -152,14 +150,6 @@ button {
   gap: 6px;
 }
 
-.banners{
-  display: flex;
-}
-
-.banner-input{
-  float: left;
-  width: 70%;
-}
 
 .add-banner-btn{
   float: right;

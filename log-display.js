@@ -6,7 +6,7 @@ export class LogDisplay extends LitElement {
     super();
     this.title = "";
     this.date = "";
-    this.img= "main-photo.jpg";
+    this.img= "";
   }
 
   static properties = {
@@ -24,6 +24,7 @@ export class LogDisplay extends LitElement {
         margin-top: 10px;
         margin-bottom: 5px;
         color: rgb(15, 30, 82);
+        
     }
     .log-date{
         position: absolute;
@@ -35,6 +36,7 @@ export class LogDisplay extends LitElement {
         font-weight: bold;
         padding:5px 10px 5px 10px;
         background-color:rgba(3, 23, 58, 0.5);
+        border-radius: 20px 20px 20px 20px;
     }
     .log-display-img{
         width: 100%;
@@ -48,7 +50,7 @@ export class LogDisplay extends LitElement {
         height: 2rem;
         position: absolute;
         top: 10%;
-        RIGHT: 1%;
+        right: 1%;
         transform: translate(-50%, -50%);
         margin-top: 5.5em;
         border-color: transparent;
@@ -56,7 +58,7 @@ export class LogDisplay extends LitElement {
         color:white;
     }
     .open-log:hover{
-        background-color: rgb(87, 20, 15);
+        background-color: #2394c1;
         transition: .3s;
     }
 
@@ -68,6 +70,7 @@ export class LogDisplay extends LitElement {
         display: flow-root;
         margin-top: 1em;
         position: relative;
+        border-radius: 20px 0px 20px 20px;
     }
 
   `;
