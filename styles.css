@@ -37,11 +37,9 @@
 /* For index.html (Home Page) */
 * {
   box-sizing: border-box;
-}
-
-body {
   font-family: "Courier New", Courier, monospace;
 }
+
 
 body{
     background-color: #050827;
@@ -135,7 +133,6 @@ button {
 .Log {
   gap: 0px 0px;
   border: #274c77;
-  border-bottom: #050827;
   border-width: 5px 0 5px 5px;
   border-style: solid;
   width: 80vw;
@@ -213,7 +210,7 @@ textarea{
 .box {
   width: 100%;
   overflow-x: hidden;
-  overflow-y: scroll;
+  overflow-y: hidden;
   padding-right: 1rem 2rem 1rem 1rem;
 }
 
@@ -270,12 +267,6 @@ textarea{
   padding-right: 1em;
 }
 
-.add-banner-btn {
-  float: right;
-  width: 30%;
-  border-right: transparent;
-}
-
 .trip-title {
   font-size: 1.8rem;
   font-weight: bold;
@@ -291,11 +282,6 @@ textarea{
   font-weight: 400;
 }
 
-.main-image img {
-  width: 180px;
-  height: auto;
-  display: block;
-}
 
 h2{
   margin: 0.5em 0 0.5em 0.2em;
@@ -340,8 +326,7 @@ margin-left: 10%;
 }
 
 .photos img {
-  width: 100%;
-  height: 110px;
+  width: 180px;
   object-fit: cover;
   display: block;
   background-color: #bed2e9;
@@ -406,11 +391,16 @@ DOUBLE CHECK THIS*/
   .new-log-wrapper {
     border-left: none;
     border-top: #274c77 solid 0.4em;
+    border-radius: 0 0 40px 0;
     padding: 1rem 0;
   }
 
   .create-new {
     top: 0;
+  }
+
+  .title{
+    border-radius: 45px 45px 0 0;
   }
 
   .Log {
@@ -421,6 +411,7 @@ DOUBLE CHECK THIS*/
 
   .box {
     padding: 1rem;
+    overflow-y: hidden;
   }
 
   .photos {

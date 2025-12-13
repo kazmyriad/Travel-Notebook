@@ -4,12 +4,14 @@ export class LogDisplay extends LitElement {
 
   constructor() {
     super();
+    this.id = 0;
     this.title = "";
     this.date = "";
     this.photo= "";
   }
 
   static properties = {
+    id: { type: Number },
     title: { type: String },
     date: { type: String },
     photo: { type: String }
@@ -92,8 +94,9 @@ export class LogDisplay extends LitElement {
             <p class="log-title">${this.title}</p>
             <p class="log-date">${this.date}</p>
             <img class="log-display-img" alt="Main trip photo" src="${this.photo}"/>
-            <button class="open-log" onclick="window.location='./page3.html';">></button>
-        </div>
+            <button class="open-log" 
+            @click=${() => window.location = `./page3.html?id=${this.id}`}> >            </button>
+          </div>
     </div>
     `;
   }

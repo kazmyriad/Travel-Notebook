@@ -6,6 +6,7 @@ export const addingData = () =>
     const inputs = document.querySelectorAll(".data-input");
     console.log("adding");
     const newItem = {
+        id: Date.now(),
         title: "",
         location:"",
         dates:"",

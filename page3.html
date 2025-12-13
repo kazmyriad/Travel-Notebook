@@ -4,6 +4,9 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
+    <script src="https://kit.fontawesome.com/e9ee1fabef.js" crossorigin="anonymous"></script>
+
+    
     <!-- maps integration -->
     <link
       rel="stylesheet"
@@ -16,46 +19,108 @@
 
   <body>
     <div class="Log">
-      <button id="editLogBtn" class="edit-page-btn">Edit Log</button>
-      <!-- <button id="backBtnPage3" class="back-btn" onclick="history.back()">
-        Back
-      </button> -->
-      <button id="backBtnPage3" class="back-btn">Back</button>
-
-      <div class="banner-container">
-        <div class="banner-content">
-          <h1 id="titleDisplay" class="trip-title">Trip Title</h1>
-          <p id="locationDisplayTop" class="trip-location">Location</p>
-          <p id="datesDisplay" class="trip-dates">Dates</p>
+        <div class="banner-container">
+          <span class="back-button" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></span>
+          <div class="banner-content">
+            <input
+              type="text"
+              id="title"
+              class="title-input"
+              placeholder="Trip Title. . ."
+            />
+            <div class="icon-inputs">
+              <i class="fa-solid fa-location-dot fa-lg icon"></i>
+              <input
+                type="text"
+                id="location"
+                class="data-input"
+                placeholder="Location Name"
+              />
+            </div>
+            <div class="icon-inputs">
+              <i class="fa-solid fa-calendar fa-lg icon"></i>
+              <input
+                type="text"
+                id="dates"
+                class="data-input"
+                placeholder="Dates of Trip"
+              />
+            </div>
+            <div class="icon-inputs">
+              <i class="fa-solid fa-image fa-lg icon"></i>
+              <input
+                type="text"
+                id="banner"
+                class="data-input"
+                placeholder="Banner URL here. . ."
+              />
+            </div>
         </div>
       </div>
 
-      <div class="top-section">
-        <div class="log-wrapper">
-          <h2 class="log-title">Notes</h2>
-          <div id="notesDisplay" class="notes-textarea"></div>
+      <div class="fields section">
+         <div class="note-wrapper box">
+          <h2>Notes</h2>
+          <textarea
+            id="notes"
+            class="notes-textarea"
+            placeholder="Write your notes..."
+          ></textarea>
         </div>
+
+        <div class="photo-gallery box">
+          <h2>Photo Gallery</h2>
+          <input
+            type="url"
+            id="photo"
+            class="photo-input"
+          />
+          <button class="submit-button"><i class="fa-solid fa-chevron-right"></i></button>
+          <div class="photos-box" id="addPhotosBtn" class="add-photos-btn">
+            <div class="photos" id="photoDisplay">
+            </div>
+          </div>
+<!-- 
+        <button id="addPhotosBtn" class="add-photos-btn">
+          + Add More Photos
+        </button> -->
       </div>
 
-      <div class="photo-gallery">
-        <div class="photo-title">
-          <h2>Photos</h2>
-        </div>
-        <div class="photos-box">
-          <div class="photos" id="photoDisplay"></div>
-        </div>
-      </div>
-
-      <div class="itinerary">
+      <div class="itinerary box">
         <h2>Itinerary</h2>
-        <div id="itineraryDisplay" class="itinerary-textarea"></div>
+        <textarea
+          id="itinerary"
+          class="itinerary-input"
+          placeholder="Type your itinerary..."
+        ></textarea>        
+        <!-- NEW CODE START -->
+        <div class="checklist">
+          <h2>Checklist</h2>
+          <input
+            type="text"
+            id="checkItemInput"
+            class="data-input"
+            placeholder="Add an item (ex: Charger, Passport, Wallet)"
+          />
+          <button id="addCheckItemBtn">+ Add Item</button>
+          <div id="checklistItems"></div>
+        </div>
+        <!-- NEW CODE END -->
       </div>
-    </div>
 
-    <div class="itinerary">
-      <h2>Itinerary</h2>
-      <div id="itineraryDisplay" class="itinerary-textarea"></div>
-    </div>
+      <!-- maps integration -->
+      <div class="map-integration">
+        <h2>Map</h2>
+        <div id="map" class="placeholder-box">Map will appear here if we get it to work..</div>
+
+        <div class="location-section">
+          <button id="getLocationBtn">Search My Location</button>
+          <p id="locationStatus"></p>
+          <div id="locationDisplay"></div>
+        </div>
+      </div>
+
+      </div>
 
     <!-- Map section on view page -->
     <div class="map-integration">
