@@ -135,6 +135,7 @@ button {
 .Log {
   gap: 0px 0px;
   border: #274c77;
+  border-bottom: #050827;
   border-width: 5px 0 5px 5px;
   border-style: solid;
   width: 80vw;
@@ -144,21 +145,56 @@ button {
   min-width: 500px;
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: #274C77 #bed2e9;
+  scrollbar-color: #274C77 rgb(141, 181, 213);
   scrollbar-width: thin;
   background-color: rgb(141, 181, 213);
   border-radius: 1%;
 }
-input, textarea{
+
+.icon{
+  color: rgb(141, 181, 213);
+}
+
+
+.title-input{
+  background-color: transparent;
+  border-color: transparent;
+  height: 2em;
+  color:#bed2e9;
+  font-size: 3em;
+  font-weight: bold;
+}
+
+.title-input::placeholder{
+  color:#638cbb;
+  font-weight: normal;
+}
+
+.data-input, .photo-input, textarea{
   background-color: #bed2e9;
   border-radius: 1em;
   border-color: transparent;
   padding: 5px 5px 5px 20px;
-  color:#050827;
+  color:#274C77;
 }
 
+.data-input{
+  font-size: 1.3em;
+  width: 85%;
+}
+
+.data-input::placeholder, .photo-input::placeholder, textarea::placeholder{
+  color:#7ea5d1;
+}
+
+.data-input:focus, .photo-input:focus, .title-input,textarea:focus{
+  outline: none;
+}
+
+
+
 textarea{
-   width: 100%;
+  width: 100%;
   height: 10em;
   border-radius: 20px;
   border-color: transparent;
@@ -185,6 +221,7 @@ textarea{
   margin: 0 1em 2em 1em;  
   padding: 10px;
   overflow-y: hidden;
+  overflow-x: hidden;
 }
 
 /* .edit-page-btn {
@@ -265,6 +302,7 @@ h2{
   color: #274c77;
 }
 
+
 .photo-input{
 width: 70%;
 margin-left: 10%;
@@ -277,7 +315,7 @@ margin-left: 10%;
   margin-top: 1em;
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: #274C77 #bed2e9;
+  scrollbar-color: rgb(141, 181, 213) #bed2e9;
   scrollbar-width: thin;
   padding: 10px;
   background-color: #bed2e9;
@@ -329,11 +367,13 @@ margin-left: 10%;
 .save-entry-btn {
   width: 100%;
   padding: 12px;
-  border: 1px solid #000;
-  background: none;
   cursor: pointer;
-  color: #000;
-   background-color: #bed2e9;
+  background-color: rgb(51, 118, 173);
+  color: #bed2e9;
+  font-weight: bold;
+  font-size:2em;
+  border-color: transparent;
+  padding: 0.5em;
 }
 
 #map,

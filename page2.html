@@ -36,26 +36,35 @@
               type="text"
               id="title"
               class="title-input"
-              placeholder="Trip Title"
+              placeholder="Trip Title. . ."
             />
-            <input
-              type="text"
-              id="location"
-              class="data-input"
-              placeholder="Location Name"
-            />
-            <input
-              type="text"
-              id="dates"
-              class="data-input"
-              placeholder="Dates of Trip"
-            />
-            <input
-              type="text"
-              id="banner"
-              class="data-input"
-              placeholder="Banner URL here. . ."
-            />
+            <div class="icon-inputs">
+              <i class="fa-solid fa-location-dot fa-lg icon"></i>
+              <input
+                type="text"
+                id="location"
+                class="data-input"
+                placeholder="Location Name"
+              />
+            </div>
+            <div class="icon-inputs">
+              <i class="fa-solid fa-calendar fa-lg icon"></i>
+              <input
+                type="text"
+                id="dates"
+                class="data-input"
+                placeholder="Dates of Trip"
+              />
+            </div>
+            <div class="icon-inputs">
+              <i class="fa-solid fa-image fa-lg icon"></i>
+              <input
+                type="text"
+                id="banner"
+                class="data-input"
+                placeholder="Banner URL here. . ."
+              />
+            </div>
         </div>
       </div>
 
@@ -91,7 +100,7 @@
         <h2>Itinerary</h2>
         <textarea
           id="itinerary"
-          class="data-input"
+          class="itinerary-input"
           placeholder="Type your itinerary..."
         ></textarea>        
         <!-- <button id="shareItineraryBtn" class="share-itinerary-btn">
