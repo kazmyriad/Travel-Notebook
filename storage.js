@@ -6,10 +6,11 @@ export const addingData = () =>
     const inputs = document.querySelectorAll(".data-input");
     console.log("adding");
     const newItem = {
+        id: Date.now(),
         title: "",
         location:"",
-        banner:"",
         dates:"",
+        banner:"",
         notes:"",
         itinerary:"",
         photo:[],
@@ -18,7 +19,6 @@ export const addingData = () =>
 
     document.querySelectorAll('input').forEach((item) => {
         newItem[item.id] = item.value;
-        console.log("hi");
     })
     savingData(newItem);    
 }
