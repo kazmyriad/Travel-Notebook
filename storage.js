@@ -19,7 +19,6 @@ export const addingData = () =>
 
     document.querySelectorAll('input').forEach((item) => {
         if (item.id === "banner" && item.value == null || item.value == ""){
-            console.log("banner!");
             var bannerPlaceholder = "https://imgs.search.brave.com/-D4btnvwdQ47Udchhn36LvWi8VbUXhmF-zVRQuyfDj0/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9pbWFn/ZXMudW5zcGxhc2gu/Y29tL3Bob3RvLTE2/MzMyNTk1ODQ2MDQt/YWZkYzI0MzEyMmVh/P2ZtPWpwZyZxPTYw/Jnc9MzAwMCZpeGxp/Yj1yYi00LjEuMCZp/eGlkPU0zd3hNakEz/ZkRCOE1IeHpaV0Z5/WTJoOE5ueDhaR0Z5/YXlVeU1HSnNkV1Vs/TWpCaVlXTnJaM0p2/ZFc1a2ZHVnVmREI4/ZkRCOGZId3c";
             newItem[item.id] = bannerPlaceholder;
         }
@@ -44,7 +43,6 @@ export const savingData = (data) => {
 
 export const retrievingData = () => {
    const database = localStorage.getItem("database") || '[]';
-   // issue is before parsing, parsing cannot continue because something isnt formatted as JSON
    console.log(database);
     return JSON.parse(database);
     };

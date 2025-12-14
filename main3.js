@@ -1,3 +1,4 @@
+import { retrievingData } from "./storage.js";
 
 var viewMap = null;
 
@@ -12,38 +13,6 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  //NEW DELETE BUTTON FUNCTION
-  if (deleteBtn) {
-    deleteBtn.addEventListener("click", function () {
-      var ok = window.confirm(
-        "Are you sure you want to delete the log? This cannot be undone."
-      );
-      if (!ok) return;
-
-      var params = new URLSearchParams(window.location.search);
-      var indexStr = params.get("index");
-      var index = indexStr === null ? 0 : Number(indexStr);
-
-      var dbJSON = localStorage.getItem("database") || "[]";
-      var db;
-
-      try {
-        db = JSON.parse(dbJSON);
-      } catch (e) {
-        db = [];
-      }
-
-      if (!Number.isInteger(index) || index < 0 || index >= db.length) {
-        alert("Unable to delete log.");
-        return;
-      }
-
-      db.splice(index, 1);
-      localStorage.setItem("database", JSON.stringify(db));
-
-      window.location.href = "index.html";
-    });
-  }
 
   // Set up the map for view page
   var mapDiv = document.querySelector("#mapView");
@@ -72,6 +41,32 @@ document.addEventListener("DOMContentLoaded", function () {
   if (!logs || logs.length === 0) {
     return;
   }
+
+  if (deleteBtn) {
+    deleteBtn.addEventListener("click", function () {
+
+      const db = retrievingData();
+      const trip = db.find(item => item.id === tripId);
+      var ok = window.confirm(
+      "Are you sure you want to delete your trip, " + trip.title + "? This cannot be undone."
+      );
+
+      //actually deleting the log
+      const index = db.findIndex(item => item.id === tripId);
+
+      if (index === -1) {
+        alert("Unable to delete log.");
+        return;
+      }
+
+      db.splice(index, 1);
+      localStorage.setItem("database", JSON.stringify(db));
+      // done in storage as savingData if time replace this w/imported method
+
+      window.location.href = "index.html";
+    });
+  }
+
 
   //displaying banner + info
   const params = new URLSearchParams(window.location.search);

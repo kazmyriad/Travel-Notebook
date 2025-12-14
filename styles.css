@@ -44,6 +44,7 @@
 
 body {
   background-color: #050827;
+  min-width: 300px;
 }
 
 .wrapper {
@@ -60,8 +61,8 @@ body {
   width: 80%;
   height: 30em;
   margin: auto;
-  margin-top: 15vh;
-  min-width: 500px;
+  margin-top: 20vh;
+  min-width: 300px;
 }
 
 .log-wrapper {
