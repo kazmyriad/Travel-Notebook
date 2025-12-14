@@ -4,31 +4,31 @@
   color: #274c77;
   padding: 10px 20px 10px 20px;
   border-radius: 20px;
-  transition: .3s;
+  transition: 0.3s;
   z-index: 2;
   position: absolute;
 }
 
-.back-button:hover{
+.back-button:hover {
   background-color: #bed2e9;
   cursor: pointer;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   color: rgb(51, 118, 173);
 }
 
-.submit-button{
+.submit-button {
   background-color: rgb(51, 118, 173);
   color: #bed2e9;
   border-color: transparent;
   padding: 0.5em;
   border-radius: 100%;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-.submit-button:hover{
+.submit-button:hover {
   background-color: #050827;
   cursor: pointer;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   color: #bed2e9;
 }
 
@@ -42,28 +42,26 @@
   font-family: "Courier New", Courier, monospace;
 }
 
-
-body{
-    background-color: #050827;
+body {
+  background-color: #050827;
 }
 
-
-.wrapper{
-    display: grid; 
-    grid-template-columns: 0fr 2fr 1fr; 
-    grid-template-rows: 0fr 1fr 0fr; 
-    gap: 0px 0px; 
-    grid-template-areas: 
-        ". title new-log-wrapper"
-        ". log-wrapper new-log-wrapper"
-        ". . ."; 
-    border:5px solid #274C77;
-    border-radius: 50px 50px 50px 0;
-    width: 80%;
-    height: 30em;
-    margin: auto;
-    margin-top: 15vh;
-    min-width: 500px;
+.wrapper {
+  display: grid;
+  grid-template-columns: 0fr 2fr 1fr;
+  grid-template-rows: 0fr 1fr 0fr;
+  gap: 0px 0px;
+  grid-template-areas:
+    ". title new-log-wrapper"
+    ". log-wrapper new-log-wrapper"
+    ". . .";
+  border: 5px solid #274c77;
+  border-radius: 50px 50px 50px 0;
+  width: 80%;
+  height: 30em;
+  margin: auto;
+  margin-top: 15vh;
+  min-width: 500px;
 }
 
 .log-wrapper {
@@ -73,9 +71,9 @@ body{
   border-width: 1em;
   padding: 5px;
   overflow-x: hidden;
-  scrollbar-color: #bed2e9 #274C77;
+  scrollbar-color: #bed2e9 #274c77;
   scrollbar-width: thin;
-  background-color:#274C77;
+  background-color: #274c77;
 }
 
 .new-log-wrapper {
@@ -86,37 +84,37 @@ body{
   border-left-style: solid;
   border-width: 0.4em;
   border-radius: 0 40px 40px 0;
-  background-color:#274C77;
+  background-color: #274c77;
 }
 
 .title {
   grid-area: title;
-  color:#274C77;
+  color: #274c77;
   width: 100%;
   border-radius: 45px 0 0 0;
   background-color: #bed2e9;
 }
 
-h1{
-  color:#274C77;
+h1 {
+  color: #274c77;
   background-color: transparent;
   font-size: 2.7em;
   font-size: #bed2e9;
   margin-left: 40%;
-  font-family: 'Lucida Console', Courier, monospace;
+  font-family: "Lucida Console", Courier, monospace;
 }
 
 .create-new {
   position: relative;
   top: 40%;
   background-color: #bed2e9;
-  color: #274C77;
+  color: #274c77;
   border-color: transparent;
   font-size: 3em;
   width: 1.2em;
   text-align: center;
   border-radius: 1em;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .create-new:hover {
@@ -124,7 +122,7 @@ h1{
   color: #bed2e9;
   width: 2em;
   cursor: pointer;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 button {
   margin: auto;
@@ -144,55 +142,59 @@ button {
   min-width: 500px;
   overflow-y: scroll;
   overflow-x: hidden;
-  scrollbar-color: #274C77 rgb(141, 181, 213);
+  scrollbar-color: #274c77 rgb(141, 181, 213);
   scrollbar-width: thin;
   background-color: rgb(141, 181, 213);
   border-radius: 1%;
 }
 
-.icon{
+.icon {
   color: rgb(141, 181, 213);
 }
 
-
-.title-input{
+.title-input {
   background-color: transparent;
   border-color: transparent;
   height: 2em;
-  color:#bed2e9;
+  color: #bed2e9;
   font-size: 3em;
   font-weight: bold;
 }
 
-.title-input::placeholder{
-  color:#638cbb;
+.title-input::placeholder {
+  color: #638cbb;
   font-weight: normal;
 }
 
-.data-input, .photo-input, textarea{
+.data-input,
+.photo-input,
+textarea {
   background-color: #bed2e9;
   border-radius: 1em;
   border-color: transparent;
   padding: 5px 5px 5px 20px;
-  color:#274C77;
+  color: #274c77;
 }
 
-.data-input{
+.data-input {
   font-size: 1.3em;
   width: 85%;
 }
 
-.data-input::placeholder, .photo-input::placeholder, textarea::placeholder{
-  color:#7ea5d1;
+.data-input::placeholder,
+.photo-input::placeholder,
+textarea::placeholder {
+  color: #7ea5d1;
 }
 
-.data-input:focus, .photo-input:focus, .title-input,textarea:focus{
+.data-input:focus,
+.photo-input:focus,
+.title-input,
+textarea:focus {
   outline: none;
 }
 
-
-
-textarea{
+textarea {
   width: 100%;
   height: 10em;
   border-radius: 20px;
@@ -216,8 +218,8 @@ textarea{
   padding-right: 1rem 2rem 1rem 1rem;
 }
 
-.section{
-  margin: 0 1em 2em 1em;  
+.section {
+  margin: 0 1em 2em 1em;
   padding: 10px;
   overflow-y: hidden;
   overflow-x: hidden;
@@ -284,16 +286,14 @@ textarea{
   font-weight: 400;
 }
 
-
-h2{
+h2 {
   margin: 0.5em 0 0.5em 0.2em;
   color: #274c77;
 }
 
-
-.photo-input{
-width: 70%;
-margin-left: 10%;
+.photo-input {
+  width: 70%;
+  margin-left: 10%;
 }
 
 .photos-box {
@@ -358,18 +358,18 @@ margin-left: 10%;
   background-color: rgb(51, 118, 173);
   color: #bed2e9;
   font-weight: bold;
-  font-size:2em;
+  font-size: 2em;
   border-color: transparent;
   padding: 0.5em;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-.save-entry-btn:hover{
+.save-entry-btn:hover {
   background-color: #bed2e9;
   color: rgb(51, 118, 173);
   font-size: 3em;
   padding-top: 0.2em;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
 #map,
@@ -382,12 +382,26 @@ margin-left: 10%;
 
 /* for page3: (View Log Page) */
 
-.edit-log{
+.edit-log {
   float: right;
   background-color: #bed2e9;
   cursor: pointer;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   color: rgb(51, 118, 173);
+}
+
+.delete-log {
+  float: right;
+  background-color: #bed2e9;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: rgb(51, 118, 173);
+  margin-right: 10px;
+}
+
+.delete-log:hover {
+  background-color: rgb(51, 118, 173);
+  color: #bed2e9;
 }
 
 /* Media Queries 
@@ -418,7 +432,7 @@ DOUBLE CHECK THIS*/
     top: 0;
   }
 
-  .title{
+  .title {
     border-radius: 45px 45px 0 0;
   }
 

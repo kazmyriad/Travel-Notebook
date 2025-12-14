@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const saveBtn = document.querySelector(".save-entry-btn");
   if (saveBtn) {
     saveBtn.addEventListener("click", openIndex);
+    // find what this line is doing and call something in storage!!!
   }
 
   const submitImg = () => {
@@ -41,6 +42,54 @@ document.addEventListener("DOMContentLoaded", function () {
       photoInput.value = "";
     });
   }
+
+  // NEW CODE START
+  const checkInput = document.querySelector("#checkItemInput");
+  const addCheckBtn = document.querySelector("#addCheckItemBtn");
+  const checklistItems = document.querySelector("#checklistItems");
+
+  const addChecklistItem = () => {
+    if (!checkInput || !checklistItems) return;
+
+    const text = checkInput.value.trim();
+    if (!text) return;
+
+    const row = document.createElement("div");
+
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
+
+    const label = document.createElement("span");
+    label.textContent = " " + text;
+
+    cb.addEventListener("change", () => {
+      if (cb.checked) {
+        label.style.textDecoration = "line-through";
+      } else {
+        label.style.textDecoration = "none";
+      }
+    });
+
+    row.appendChild(cb);
+    row.appendChild(label);
+    checklistItems.appendChild(row);
+
+    checkInput.value = "";
+  };
+
+  if (addCheckBtn) {
+    addCheckBtn.addEventListener("click", addChecklistItem);
+  }
+
+  if (checkInput) {
+    checkInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        addChecklistItem();
+      }
+    });
+  }
+  // NEW CODE END
 
   // Location lookup
   const getLocBtn = document.querySelector("#getLocationBtn");
