@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const photoDisplay = document.querySelector("#photoDisplay");
   const addPhotoBtn = document.querySelector(".photo-gallery button");
 
-
   if (addPhotoBtn && photoInput && photoDisplay) {
     addPhotoBtn.addEventListener("click", () => {
       const url = photoInput.value.trim();
@@ -45,52 +44,51 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   // NEW CODE START
-  // const checkInput = document.querySelector("#checkItemInput");
-  // const addCheckBtn = document.querySelector("#addCheckItemBtn");
-  // const checklistItems = document.querySelector("#checklistItems");
+  const checkInput = document.querySelector("#checkItemInput");
+  const addCheckBtn = document.querySelector("#addCheckItemBtn");
+  const checklistItems = document.querySelector("#checklistItems");
 
-  // const addChecklistItem = () => {
-  //   if (!checkInput || !checklistItems) return;
+  const addChecklistItem = () => {
+    if (!checkInput || !checklistItems) return;
 
-  //   const text = checkInput.value.trim();
-  //   if (!text) return;
+    const text = checkInput.value.trim();
+    if (!text) return;
 
-  //   const row = document.createElement("div");
+    const row = document.createElement("div");
 
-  //   const cb = document.createElement("input");
-  //   cb.type = "checkbox";
+    const cb = document.createElement("input");
+    cb.type = "checkbox";
 
-  //   const label = document.createElement("span");
-  //   label.textContent = " " + text;
+    const label = document.createElement("span");
+    label.textContent = " " + text;
 
-  //   cb.addEventListener("change", () => {
-  //     if (cb.checked) {
-  //       label.style.textDecoration = "line-through";
-  //     } else {
-  //       label.style.textDecoration = "none";
-  //     }
-  //   });
+    cb.addEventListener("change", () => {
+      if (cb.checked) {
+        label.style.textDecoration = "line-through";
+      } else {
+        label.style.textDecoration = "none";
+      }
+    });
 
-  //   row.appendChild(cb);
-  //   row.appendChild(label);
-  //   checklistItems.appendChild(row);
+    row.appendChild(cb);
+    row.appendChild(label);
+    checklistItems.appendChild(row);
 
-  //   checkInput.value = "";
-  // };
+    checkInput.value = "";
+  };
 
-  // if (addCheckBtn) {
-  //   addCheckBtn.addEventListener("click", addChecklistItem);
-  // }
+  if (addCheckBtn) {
+    addCheckBtn.addEventListener("click", addChecklistItem);
+  }
 
-  // if (checkInput) {
-  //   checkInput.addEventListener("keydown", (e) => {
-  //     if (e.key === "Enter") {
-  //       e.preventDefault();
-  //       addChecklistItem();
-  //     }
-  //   });
-  // }
-  // NEW CODE END
+  if (checkInput) {
+    checkInput.addEventListener("keydown", (e) => {
+      if (e.key === "Enter") {
+        e.preventDefault();
+        addChecklistItem();
+      }
+    });
+  }
 
   // Location lookup
   const getLocBtn = document.querySelector("#getLocationBtn");
