@@ -19,42 +19,18 @@
 
   <body>
     <div class="Log">
-        <div class="banner-container">
+        <div class="banner-display">
           <span class="back-button" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></span>
-          <button id="editLogBtn" class="edit-log">Edit Log</button>
-          <div class="banner-content">
-            <input
-              type="text"
-              id="title"
-              class="title-input"
-              placeholder="Trip Title. . ."
-            />
-            <div class="icon-inputs">
-              <i class="fa-solid fa-location-dot fa-lg icon"></i>
-              <input
-                type="text"
-                id="location"
-                class="data-input"
-                placeholder="Location Name"
-              />
+          <button id="editLogBtn" class="edit-log"><i class="fa-solid fa-pen-to-square"></i></button>
+          <div class="trip-banner">
+            <div class="title-display">
+              <i class="fa-solid fa-location-dot"></i>
+              <p></p>
             </div>
-            <div class="icon-inputs">
-              <i class="fa-solid fa-calendar fa-lg icon"></i>
-              <input
-                type="text"
-                id="dates"
-                class="data-input"
-                placeholder="Dates of Trip"
-              />
-            </div>
-            <div class="icon-inputs">
-              <i class="fa-solid fa-image fa-lg icon"></i>
-              <input
-                type="text"
-                id="banner"
-                class="data-input"
-                placeholder="Banner URL here. . ."
-              />
+            <div class="banner-display">
+              <p>Place</p>
+              <p>Place</p>
+              <p>Place</p>
             </div>
         </div>
       </div>
@@ -95,7 +71,7 @@
           placeholder="Type your itinerary..."
         ></textarea>        
         <!-- NEW CODE START -->
-        <div class="checklist">
+        <!-- <div class="checklist">
           <h2>Checklist</h2>
           <input
             type="text"
@@ -105,22 +81,8 @@
           />
           <button id="addCheckItemBtn">+ Add Item</button>
           <div id="checklistItems"></div>
-        </div>
+        </div> -->
         <!-- NEW CODE END -->
-      </div>
-
-      <!-- maps integration -->
-      <div class="map-integration">
-        <h2>Map</h2>
-        <div id="map" class="placeholder-box">Map will appear here if we get it to work..</div>
-
-        <div class="location-section">
-          <button id="getLocationBtn">Search My Location</button>
-          <p id="locationStatus"></p>
-          <div id="locationDisplay"></div>
-        </div>
-      </div>
-
       </div>
 
     <!-- Map section on view page -->
@@ -131,4 +93,5 @@
       </div>
     </div>
   </body>
+    <script type="module" src="./storage.js"></script>
 </html>

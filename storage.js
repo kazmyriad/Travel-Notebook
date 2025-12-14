@@ -1,12 +1,10 @@
 // We can worry about the JS towards the end
-const compiledData = [];
 
 export const addingData = () =>
 {
     const inputs = document.querySelectorAll(".data-input");
     console.log("adding");
     const newItem = {
-        id: Date.now(),
         title: "",
         location:"",
         dates:"",
@@ -14,7 +12,9 @@ export const addingData = () =>
         notes:"",
         itinerary:"",
         photo:[],
-        itinerary:""
+        id: Date.now(),
+        latitude: "",
+        longitude: ""
         };
 
     document.querySelectorAll('input').forEach((item) => {

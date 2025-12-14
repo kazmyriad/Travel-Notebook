@@ -8,6 +8,7 @@ window.addEventListener("DOMContentLoaded", function(){
      const db = retrievingData();
      console.log("Hello");
          let count = 0;
+         
      db.forEach(element => {
       // how to access title of a specific object?
         var el = `<log-display title="${db[count].title}" date="${db[count].dates}" photo="${db[count].banner}" id="${db[count].id}"></log-display>`;

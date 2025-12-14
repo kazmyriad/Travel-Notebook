@@ -1,22 +1,4 @@
-// document.addEventListener("DOMContentLoaded", function () {
-//   var editBtn = document.querySelector("#editLogBtn");
 
-//   if (editBtn) {
-//     editBtn.addEventListener("click", function () {
-//       window.location.href = "page2.html";
-//     });
-//   }
-
-//   var backBtn = document.querySelector("#backBtnPage3");
-
-//   if (backBtn) {
-//     backBtn.addEventListener("click", function () {
-//       window.location.href = "index.html";
-//     });
-//   }
-// });
-
-// This will hold our map on the view page
 var viewMap = null;
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -43,7 +25,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }).addTo(viewMap);
   }
 
-  var logsJSON = localStorage.getItem("logs");
+  var logsJSON = localStorage.getItem("database");
   if (!logsJSON) {
     return;
   }
@@ -59,7 +41,24 @@ document.addEventListener("DOMContentLoaded", function () {
     return;
   }
 
-  var log = logs[0];
+  //displaying banner
+const params = new URLSearchParams(window.location.search);
+const tripId = parseInt(params.get("id"), 10);
+
+const log = logs.find(item => item.id === tripId);
+if (log && log.banner) {
+  const bannerElement = document.querySelector(".trip-banner");
+  if (bannerElement) {
+    bannerElement.style.setProperty("--banner-url", `url("${log.banner}")`);
+  }
+}
+
+// displaying log infor
+const titleDisplay = document.getElementById(".title-display");
+  if (titleDisplay) {
+    titleDisplay.textContent = "Hello";
+  }
+
 
   if (
     viewMap &&

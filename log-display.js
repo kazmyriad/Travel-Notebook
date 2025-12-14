@@ -43,6 +43,7 @@ export class LogDisplay extends LitElement {
     .log-display-img{
         width: 100%;
         min-width: 200px;
+        
     }
 
     .open-log{

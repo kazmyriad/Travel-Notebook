@@ -26,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
   const photoDisplay = document.querySelector("#photoDisplay");
   const addPhotoBtn = document.querySelector(".photo-gallery button");
 
+
   if (addPhotoBtn && photoInput && photoDisplay) {
     addPhotoBtn.addEventListener("click", () => {
       const url = photoInput.value.trim();
