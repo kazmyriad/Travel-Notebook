@@ -12,59 +12,68 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="styles.css" />
-    <script src="https://kit.fontawesome.com/e9ee1fabef.js" crossorigin="anonymous"></script>
-    
+    <script
+      src="https://kit.fontawesome.com/e9ee1fabef.js"
+      crossorigin="anonymous"
+    ></script>
+
     <!-- maps integration  -->
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
     <script type="module" src="./main2.js"></script>
     <title>Travel Log Entry</title>
   </head>
 
   <body>
-   <!-- Adding an image banner and including the Title, Location, and Dates inside  -->
+    <!-- Adding an image banner and including the Title, Location, and Dates inside  -->
     <div class="Log">
-        <div class="banner-container">
-          <span class="back-button" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></span>
-          <div class="banner-content">
+      <div class="banner-container">
+        <span class="back-button" onclick="history.back()"
+          ><i class="fa-solid fa-chevron-left"></i
+        ></span>
+        <div class="banner-content">
+          <input
+            type="text"
+            id="title"
+            class="title-input"
+            placeholder="Trip Title. . ."
+          />
+          <div class="icon-inputs">
+            <i class="fa-solid fa-location-dot fa-lg icon"></i>
             <input
               type="text"
-              id="title"
-              class="title-input"
-              placeholder="Trip Title. . ."
+              id="location"
+              class="data-input"
+              placeholder="Location Name"
             />
-            <div class="icon-inputs">
-              <i class="fa-solid fa-location-dot fa-lg icon"></i>
-              <input
-                type="text"
-                id="location"
-                class="data-input"
-                placeholder="Location Name"
-              />
-            </div>
-            <div class="icon-inputs">
-              <i class="fa-solid fa-calendar fa-lg icon"></i>
-              <input
-                type="text"
-                id="dates"
-                class="data-input"
-                placeholder="Dates of Trip"
-              />
-            </div>
-            <div class="icon-inputs">
-              <i class="fa-solid fa-image fa-lg icon"></i>
-              <input
-                type="text"
-                id="banner"
-                class="data-input"
-                placeholder="Banner URL here. . ."
-              />
-            </div>
+          </div>
+          <div class="icon-inputs">
+            <i class="fa-solid fa-calendar fa-lg icon"></i>
+            <input
+              type="text"
+              id="dates"
+              class="data-input"
+              placeholder="Dates of Trip"
+            />
+          </div>
+          <div class="icon-inputs">
+            <i class="fa-solid fa-image fa-lg icon"></i>
+            <input
+              type="text"
+              id="banner"
+              class="data-input"
+              placeholder="Banner URL here. . ."
+            />
+          </div>
         </div>
       </div>
 
       <div class="fields section">
-         <div class="note-wrapper box">
+        <div class="note-wrapper box">
           <h2>Notes</h2>
           <textarea
             id="notes"
@@ -75,29 +84,24 @@
 
         <div class="photo-gallery box">
           <h2>Photo Gallery</h2>
-          <input
-            type="url"
-            id="photo"
-            class="photo-input"
-          />
-          <button class="submit-button"><i class="fa-solid fa-chevron-right"></i></button>
+          <input type="url" id="photo" class="photo-input" />
+          <button class="submit-button" aria-label="Add photo">
+            <i class="fa-solid fa-chevron-right"></i>
+          </button>
           <div class="photos-box" id="addPhotosBtn" class="add-photos-btn">
-            <div class="photos" id="photoDisplay">
-            </div>
+            <div class="photos" id="photoDisplay"></div>
           </div>
       </div>
 
-      <div class="itinerary box">
-        <h2>Itinerary</h2>
-        <textarea
-          id="itinerary"
-          class="itinerary-input"
-          placeholder="Type your itinerary..."
-        ></textarea>        
+        <div class="itinerary box">
+          <h2>Itinerary</h2>
+          <textarea
+            id="itinerary"
+            class="itinerary-input"
+            placeholder="Type your itinerary..."
+          ></textarea>
 
-
-        <!-- NEW CODE START -->
-        <!-- <div class="checklist">
+        <div class="checklist">
           <h2>Checklist</h2>
           <input
             type="text"
@@ -107,32 +111,28 @@
           />
           <button id="addCheckItemBtn">+ Add Item</button>
           <div id="checklistItems"></div>
-        </div> -->
-        <!-- NEW CODE END -->
-      </div>
-
-      <!-- maps integration -->
-      <div class="map-integration">
-        <h2>Map</h2>
-        <div id="map" class="placeholder-box">Map will appear here if we get it to work..</div>
-
-        <div class="location-section">
-          <button id="getLocationBtn">Search My Location</button>
-          <p id="locationStatus"></p>
-          <div id="locationDisplay"></div>
         </div>
       </div>
 
-      </div>
+          <div class="map-integration">
+            <h2>Map</h2>
+            <div id="map" class="placeholder-box">
+              Map will appear here if we get it to work..
+            </div>
 
-     <div class="save-entry">
-       <button id="saveEntryBtn" class="save-entry-btn">
-        Save Entry
-      </button>
-     </div>
-    </div>
+            <div class="location-section">
+              <button id="getLocationBtn">Search My Location</button>
+              <p id="locationStatus"></p>
+              <div id="locationDisplay"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="save-entry">
+          <button id="saveEntryBtn" class="save-entry-btn">Save Entry</button>
+        </div>
+      </div>
     </div>
   </body>
-      <script type="module" src="./storage.js"></script>
-
+  <script type="module" src="./storage.js"></script>
 </html>
