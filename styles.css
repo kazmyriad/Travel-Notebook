@@ -408,6 +408,22 @@ h2 {
   transition: .3s;
 }
 
+.location-button{
+  background-color: rgb(51, 118, 173);
+  color: #bed2e9;
+  border-color: transparent;
+  font-size: 1em;
+  margin: 1em auto 1em auto;
+  border-radius: 20px;
+  transition: 0.3s;
+}
+
+.location-button:hover{
+  background-color: #050827;
+  cursor: pointer;
+  transition: 0.3s ease-in-out;
+  color: #bed2e9;
+}
 
 .trip-banner{
   background-image: var(--banner-url);
@@ -510,11 +526,12 @@ DOUBLE CHECK THIS*/
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width:500px) and (max-width: 600px) {
   .wrapper {
     width: 94%;
     height: 75vh;
     border-width: 4px;
+    min-width: 500px;
   }
 
   .Log {
