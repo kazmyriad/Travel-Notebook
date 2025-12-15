@@ -73,6 +73,7 @@ export const addingData = () => {
 };
 
 //actually writing data to memory
+//i had to edit some parts of your code here, got some of it from google
 export const savingData = (data) => {
   const db = retrievingData();
 

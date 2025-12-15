@@ -114,9 +114,9 @@ h1 {
   height: 2em;
   width: 2em;
   padding-top: 10px;
-  padding-left:10px;
+  padding-left: 10px;
   border-radius: 100%;
-  transition: .3s;
+  transition: 0.3s;
 }
 
 .create-new:hover {
@@ -385,7 +385,8 @@ h2 {
 
 /* for page3: (View Log Page) */
 
-.edit-log, .delete-log{
+.edit-log,
+.delete-log {
   float: right;
   background-color: #bed2e9;
   cursor: pointer;
@@ -397,85 +398,104 @@ h2 {
   margin: 1em 1em 1em 0;
   padding-left: 5px;
   padding-top: 5px;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
   color: rgb(51, 118, 173);
 }
 
-.edit-log:hover , .delete-log:hover{
+.edit-log:hover,
+.delete-log:hover {
   background-color: rgb(51, 118, 173);
   color: #bed2e9;
   border-color: transparent;
-  transition: .3s;
-}
-
-.location-button{
-  background-color: rgb(51, 118, 173);
-  color: #bed2e9;
-  border-color: transparent;
-  font-size: 1em;
-  margin: 1em auto 1em auto;
-  border-radius: 20px;
   transition: 0.3s;
 }
 
-.location-button:hover{
-  background-color: #050827;
-  cursor: pointer;
-  transition: 0.3s ease-in-out;
-  color: #bed2e9;
-}
-
-.trip-banner{
+.trip-banner {
   background-image: var(--banner-url);
-  background-image: linear-gradient(to bottom, rgba(35, 86, 190, 0.52), rgba(9, 0, 38, 0.73)), var(--banner-url);
+  background-image: linear-gradient(
+      to bottom,
+      rgba(35, 86, 190, 0.52),
+      rgba(9, 0, 38, 0.73)
+    ),
+    var(--banner-url);
   background-size: cover;
-  padding:1.5em;
+  padding: 1.5em;
 }
 
-.title-display{
+.title-display {
   margin-top: 0.9em;
-  color:#bed2e9;
+  color: #bed2e9;
   display: flex;
   font-size: 3em;
   font-weight: bold;
 }
 
-.title-display > div > i{
+.title-display > div > i {
   margin: auto 0.3em auto 0;
 }
 
-.information-section{
+.information-section {
   display: flex;
-  transition: .3s;
+  transition: 0.3s;
 }
 
-.information-section:hover{
+.information-section:hover {
   font-size: 1.2em;
-  transition: .3s ease-in-out;
+  transition: 0.3s ease-in-out;
 }
 
-.information-display > div > p{
+.information-display > div > p {
   background-color: #bed2e9;
   border-radius: 20px;
   font-size: 1.5em;
   padding: 0.2em 0.2em 0.2em 1.5em;
   margin: 10px 10px 10px 10px;
   width: 100%;
-  color:rgb(51, 118, 173);
+  color: rgb(51, 118, 173);
 }
 
-.information-display > div > i{
+.information-display > div > i {
   margin: auto 1em auto 0;
 }
 
-.notes-display, .itinerary-display{
+.notes-display,
+.itinerary-display {
   width: 100%;
   background-color: #bed2e9;
   border-radius: 20px;
-  color:rgb(51, 118, 173);
+  color: rgb(51, 118, 173);
   height: 20em;
   padding: 1em 1em 1em 1em;
   white-space: pre-line;
+}
+
+/* New css*/
+.photo-selected {
+  outline: 3px solid rgb(51, 118, 173);
+  outline-offset: 2px;
+}
+
+.delete-photo-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.checklist-delete-btn {
+  background-color: rgb(51, 118, 173);
+  color: #bed2e9;
+  border-color: transparent;
+  border-radius: 100%;
+  width: 2em;
+  height: 2em;
+  margin-left: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.checklist-delete-btn:hover {
+  background-color: #050827;
+  color: #bed2e9;
+  transition: 0.3s ease-in-out;
 }
 
 /* Media Queries 

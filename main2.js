@@ -15,7 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const saveBtn = document.querySelector(".save-entry-btn");
   if (saveBtn) {
     saveBtn.addEventListener("click", openIndex);
-    // find what this line is doing and call something in storage!!!
   }
 
   const submitImg = () => {
@@ -27,13 +26,30 @@ document.addEventListener("DOMContentLoaded", function () {
     bannerBtn.addEventListener("click", submitImg);
   }
 
-  // testing map usage, trying to figure how to make a map appear with APIs
-  // i searched this entire part up, especially the location coordinates part
-
   // Photo upload functionality
+  // just added delete button
   const photoInput = document.querySelector("#photo");
   const photoDisplay = document.querySelector("#photoDisplay");
-  const addPhotoBtn = document.querySelector(".photo-gallery button");
+  const addPhotoBtn = document.querySelector(".photo-gallery .submit-button");
+  const deletePhotoBtn = document.querySelector(".delete-photo-btn");
+
+  let selectedWrapper = null;
+
+  const clearSelectedPhoto = () => {
+    if (selectedWrapper) {
+      selectedWrapper.classList.remove("photo-selected");
+      selectedWrapper = null;
+    }
+    if (deletePhotoBtn) deletePhotoBtn.disabled = true;
+  };
+
+  const selectPhotoWrapper = (wrapper) => {
+    if (!wrapper) return;
+    clearSelectedPhoto();
+    wrapper.classList.add("photo-selected");
+    selectedWrapper = wrapper;
+    if (deletePhotoBtn) deletePhotoBtn.disabled = false;
+  };
 
   if (addPhotoBtn && photoInput && photoDisplay) {
     addPhotoBtn.addEventListener("click", () => {
@@ -45,9 +61,29 @@ document.addEventListener("DOMContentLoaded", function () {
 
       const wrapper = document.createElement("div");
       wrapper.appendChild(img);
-      photoDisplay.appendChild(wrapper);
 
+      photoDisplay.appendChild(wrapper);
       photoInput.value = "";
+    });
+  }
+
+  if (photoDisplay) {
+    photoDisplay.addEventListener("click", (e) => {
+      const img = e.target.closest("img");
+      if (!img) return;
+
+      const wrapper = img.closest("div");
+      if (!wrapper) return;
+
+      selectPhotoWrapper(wrapper);
+    });
+  }
+
+  if (deletePhotoBtn) {
+    deletePhotoBtn.addEventListener("click", () => {
+      if (!selectedWrapper) return;
+      selectedWrapper.remove();
+      clearSelectedPhoto();
     });
   }
 
@@ -56,30 +92,24 @@ document.addEventListener("DOMContentLoaded", function () {
   const addCheckBtn = document.querySelector("#addCheckItemBtn");
   const checklistItems = document.querySelector("#checklistItems");
 
-  const addChecklistItem = () => {
-    if (!checkInput || !checklistItems) return;
-
-    const text = checkInput.value.trim();
-    if (!text) return;
-
+  const makeChecklistRow = (text, checked) => {
     const row = document.createElement("div");
 
     const cb = document.createElement("input");
     cb.type = "checkbox";
+    cb.checked = !!checked;
 
     const label = document.createElement("span");
     label.textContent = " " + text;
+    label.style.textDecoration = cb.checked ? "line-through" : "none";
 
     cb.addEventListener("change", () => {
-      if (cb.checked) {
-        label.style.textDecoration = "line-through";
-      } else {
-        label.style.textDecoration = "none";
-      }
+      label.style.textDecoration = cb.checked ? "line-through" : "none";
     });
 
     const delBtn = document.createElement("button");
     delBtn.textContent = "✕";
+    delBtn.classList.add("checklist-delete-btn");
 
     delBtn.addEventListener("click", () => {
       row.remove();
@@ -88,8 +118,17 @@ document.addEventListener("DOMContentLoaded", function () {
     row.appendChild(cb);
     row.appendChild(label);
     row.appendChild(delBtn);
-    checklistItems.appendChild(row);
 
+    return row;
+  };
+
+  const addChecklistItem = () => {
+    if (!checkInput || !checklistItems) return;
+
+    const text = checkInput.value.trim();
+    if (!text) return;
+
+    checklistItems.appendChild(makeChecklistRow(text, false));
     checkInput.value = "";
   };
 
@@ -178,6 +217,8 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
+  // When a log is edited, it brings it the correct screen2
+  // double check and edit this code if you want, i searched this up
   const params = new URLSearchParams(window.location.search);
   const idStr = params.get("id");
   const tripId = idStr === null ? null : Number(idStr);
@@ -226,37 +267,16 @@ document.addEventListener("DOMContentLoaded", function () {
         }
       }
 
+      clearSelectedPhoto();
+
       if (checklistItems) {
         checklistItems.innerHTML = "";
         if (Array.isArray(log.checklist)) {
           log.checklist.forEach((item) => {
             if (!item || !item.text) return;
-
-            const row = document.createElement("div");
-
-            const cb = document.createElement("input");
-            cb.type = "checkbox";
-            cb.checked = !!item.checked;
-
-            const label = document.createElement("span");
-            label.textContent = " " + item.text;
-            label.style.textDecoration = cb.checked ? "line-through" : "none";
-
-            cb.addEventListener("change", () => {
-              label.style.textDecoration = cb.checked ? "line-through" : "none";
-            });
-
-            const delBtn = document.createElement("button");
-            delBtn.textContent = "✕";
-
-            delBtn.addEventListener("click", () => {
-              row.remove();
-            });
-
-            row.appendChild(cb);
-            row.appendChild(label);
-            row.appendChild(delBtn);
-            checklistItems.appendChild(row);
+            checklistItems.appendChild(
+              makeChecklistRow(item.text, item.checked)
+            );
           });
         }
       }
