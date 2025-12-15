@@ -20,8 +20,8 @@
   <body>
     <div class="Log">
         <div class="banner-display">
-          <button id="deleteLogBtn" class="delete-log"><i class="fa-solid fa-trash-can"></i></button>
-          <button id="editLogBtn" class="edit-log"><i class="fa-solid fa-pen-to-square"></i></button>
+          <button id="deleteLogBtn" class="delete-log" aria-label="Delete log"><i class="fa-solid fa-trash-can"></i></button>
+          <button id="editLogBtn" class="edit-log" aria-label="Edit log"><i class="fa-solid fa-pen-to-square"></i></button>
           <div class="trip-banner">
             <span class="back-button" onclick="history.back()"><i class="fa-solid fa-chevron-left"></i></span>
             <div class="title-display">
@@ -73,20 +73,11 @@
           <div class="itinerary-display">
             <p></p>
           </div>
-        <!-- NEW CODE START -->
-        <!-- <div class="checklist">
-          <h2>Checklist</h2>
-          <input
-            type="text"
-            id="checkItemInput"
-            class="data-input"
-            placeholder="Add an item (ex: Charger, Passport, Wallet)"
-          />
-          <button id="addCheckItemBtn">+ Add Item</button>
-          <div id="checklistItems"></div>
-        </div> -->
-        <!-- NEW CODE END -->
-      </div>
+    
+        <div class="checklist">
+  <h2>Checklist</h2>
+  <div id="checklistItems"></div>
+</div>
 
     <!-- Map section on view page -->
     <div class="map-integration">
