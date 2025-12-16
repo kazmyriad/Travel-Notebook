@@ -507,7 +507,7 @@ DOUBLE CHECK THIS*/
       "title"
       "log-wrapper"
       "new-log-wrapper";
-    width: min(92%, 900px);
+    width: 500px;
     min-width: 0;
     height: 70vh;
     margin-top: 8vh;
